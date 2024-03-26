@@ -4,7 +4,7 @@ var invite = getParameterByName('invite') ? getParameterByName('invite') : false
 var theme = getParameterByName('theme') ? getParameterByName('theme') : 'dark';
 
 $.getJSON('https://discordapp.com/api/servers/' + serverID + '/widget.json', function(data) {
-    $("head").append('<link rel="stylesheet" href="css/' + theme + '.css" />');
+    $("head").append('<link rel="stylesheet" href="assets/' + theme + '.css" />');
 
     var titlebar = ``;
     if(title) {

@@ -1,20 +1,135 @@
+:root {
+    --brand-500: hsl(235 calc( 1 *85.6%) 64.7% /1);
+    --white-500: hsl(var(--white-500-hsl)/1);
+    --primary-700: hsl(225 calc( 1 *6.3%) 12.5% /1);
+}
+
 body {
-    background: #2a2a2a;
-    color: #aaa;
+    color: white;
     overflow-x:hidden;
     margin: 0;
     padding: 0;
 }
 
-.discord-title {
-    text-align: left;
-    height: 32px;
-    line-height: 32px!important;
-    background-color: #333;
-    border: solid 1px #222!important;
-    padding-left: 10px!important;
-    font-weight: bold!important;
-    font-size: 1.17em!important;
+.discord-widget {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.widget-theme-dark {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: var(--font-display);
+    font-size: 14px;
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.widgetHeader {
+    background-color: var(--brand-500);
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.widgetFooterText {
+    display: inline-block;
+    font-weight: 500;
+    color: #8a8e94;
+    opacity: .5;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.widgetFooter {
+    -webkit-box-shadow: 0 -1px 18px hsl(0 calc( 1 *0%) 0% /.2), 0 -1px 0 hsl(0 calc( 1 *0%) 0% /.2);
+    box-shadow: 0 -1px 18px hsl(0 calc( 1 *0%) 0% /.2), 0 -1px 0 hsl(0 calc( 1 *0%) 0% /.2);
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    background-color: var(--primary-700);
+    padding: 6px 6px 6px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 30px;
+}
+
+.widgetLogo {
+    background: url(discord-logo.svg) 50% no-repeat;
+    width: 124px;
+    height: 34px;
+    background-size: 124px 34px;
+    display: inline-block;
+    -webkit-transition: opacity .25s ease-out;
+    transition: opacity .25s ease-out
+}
+
+.widgetHeader, .widgetHeaderCount {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    float: right;
+    text-align: right;
+    font-size: 90%;
+}
+
+.widgetBtnConnect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    border: 1px solid #212325;
+    border-radius: 4px;
+    background-clip: padding-box;
+    background-color: hsl(0 calc( 1 *0%) 100% /.1);
+    -webkit-box-shadow: inset 0 1px 0 hsl(0 calc( 1 *0%) 100% /.04);
+    box-shadow: inset 0 1px 0 hsl(0 calc( 1 *0%) 100% /.04);
+    -webkit-transition: opacity .25s ease-out;
+    transition: opacity .25s ease-out;
+}
+
+.discord-widget a {
+    color: var(--white-500);
+    text-decoration: none;
 }
 
 .title-text {
@@ -61,137 +176,6 @@ body {
     color: #afafaf;
     background: -webkit-gradient(linear, left top, left bottom, from(#575757), to(#888));
     background: -moz-linear-gradient(top, #575757, #888);
-}
-
-.discord-title div,
-.discord-title span,
-.discord-title applet,
-.discord-title object,
-.discord-title iframe,
-.discord-title h1,
-.discord-title h2,
-.discord-title h3,
-.discord-title h4,
-.discord-title h5,
-.discord-title h6,
-.discord-title p,
-.discord-title blockquote,
-.discord-title pre,
-.discord-title a,
-.discord-title abbr,
-.discord-title acronym,
-.discord-title address,
-.discord-title big,
-.discord-title cite,
-.discord-title code,
-.discord-title del,
-.discord-title dfn,
-.discord-title em,
-.discord-title img,
-.discord-title ins,
-.discord-title kbd,
-.discord-title q,
-.discord-title s,
-.discord-title samp,
-.discord-title small,
-.discord-title strike,
-.discord-title strong,
-.discord-title sub,
-.discord-title sup,
-.discord-title tt,
-.discord-title var,
-.discord-title b,
-.discord-title u,
-.discord-title i,
-.discord-title center,
-.discord-title dl,
-.discord-title dt,
-.discord-title dd,
-.discord-title ol,
-.discord-title ul,
-.discord-title li,
-.discord-title fieldset,
-.discord-title form,
-.discord-title label,
-.discord-title legend,
-.discord-title table,
-.discord-title caption,
-.discord-title tbody,
-.discord-title tfoot,
-.discord-title thead,
-.discord-title tr,
-.discord-title th,
-.discord-title td,
-.discord-title article,
-.discord-title aside,
-.discord-title canvas,
-.discord-title details,
-.discord-title embed,
-.discord-title figure,
-.discord-title figcaption,
-.discord-title footer,
-.discord-title header,
-.discord-title hgroup,
-.discord-title menu,
-.discord-title nav,
-.discord-title output,
-.discord-title ruby,
-.discord-title section,
-.discord-title summary,
-.discord-title time,
-.discord-title mark,
-.discord-title audio,
-.discord-title video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: middle
-}
-.discord-title article,
-.discord-title aside,
-.discord-title details,
-.discord-title figcaption,
-.discord-title figure,
-.discord-title footer,
-.discord-title header,
-.discord-title hgroup,
-.discord-title menu,
-.discord-title nav,
-.discord-title section {
-    display: block
-}
-.discord-title body {
-    line-height: 1
-}
-.discord-title ol,
-.discord-title ul {
-    list-style: none
-}
-.discord-title blockquote,
-.discord-title q {
-    quotes: none
-}
-.discord-title blockquote:before,
-.discord-title blockquote:after,
-.discord-title q:before,
-.discord-title q:after {
-    content: '';
-    content: none
-}
-.discord-title table {
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
-.discord-channel {
-    font-weight: bold!important;
-    list-style-type: none!important;
-    padding-left: 10px!important;
-    margin: 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 .discord-userlist {

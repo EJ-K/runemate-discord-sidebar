@@ -7,17 +7,9 @@
     <script src="assets/discord.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/master.css" media="screen" title="default" charset="utf-8">
-    <link rel='stylesheet' href='assets/jquery.scrollbar.css' />
-    <script src='assets/jquery.scrollbar.min.js'></script>
-    <script type="text/javascript">
-        jQuery(function($){
-            $('.page-wrapper').scrollbar({scrollx: 'advanced'});
-        });
-    </script>
     <style type="text/css">
-        .page-wrapper {
+        .widgetFooter {
             border: none;
-            height: calc(100% - 34px);
             margin: 0;
             padding: 0;
             width: auto;
@@ -25,13 +17,14 @@
     </style>
 </head>
 <body>
-<div class="discord-title">
-    <h3 style="float:left">Title</h3>
-    <h3 style="float:right">Join</div>
-</div>
-<div class="page-wrapper scrollbar-macosx">
-    <p class="discord-channel">Online (0)</p>
-    <ul class="discord-userlist"></ul>
+<div class="discord-widget">
+    <div class="widget-theme-dark">
+        <div class="widgetHeader">
+            <a class="widgetLogo" href="https://discord.com?utm_source=Discord%20Widget&amp;utm_medium=Logo" target="_blank"></a>
+            <p class="widgetHeaderCount">0 members online!</p>
+        </div>
+        <div class="widgetFooter"></div>
+    </div>
 </div>
 </body>
 </html>

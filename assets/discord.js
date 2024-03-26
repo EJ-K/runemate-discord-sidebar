@@ -3,43 +3,26 @@ var title = getParameterByName('title') ? getParameterByName('title') : false;
 var invite = getParameterByName('invite') ? getParameterByName('invite') : false;
 var theme = getParameterByName('theme') ? getParameterByName('theme') : 'dark';
 
-$.getJSON('https://discordapp.com/api/servers/' + serverID + '/widget.json', function(data) {
+$.getJSON('https://discordapp.com/api/servers/' + serverID + '/widget.json', function (data) {
     $("head").append('<link rel="stylesheet" href="assets/' + theme + '.css" />');
+    $('.widgetHeaderCount').html('<strong>' + data.presence_count + '</strong> members online!');
 
-    var titlebar = ``;
-    if(title) {
-        titlebar += `<h3 class='title-text'>` + title + `</h3>`;
+    var titlebar = `<span class="widgetFooterText">Join the `;
+    if (title) {
+        titlebar += `<strong>` + title + `</strong>`;
     } else {
-        titlebar += `<h3 class='title-text'>` + data.name + `</h3>`;
+        titlebar += `<strong>` + data.name + `</strong>`;
     }
+
+    titlebar += " Discord community!</span>"
+    var wrapper = $('.widgetFooter');
+    wrapper.append(titlebar);
     if (invite) {
-        titlebar += `<span class='invite-text'><a target="_parent" class='invite-button' href='` + data.instant_invite + `'>JOIN</a></span>`;
+        var text = `<a class="widgetBtnConnect" href="` + data.instant_invite + `" target="_blank">Join Discord</a>`;
+        wrapper.append(text);
     }
 
-    $('.discord-title').html(titlebar);
-
-    $('.discord-channel').html('Online (' + data.members.length + ')');
-    for (i = 0; i < data.members.length; i++) {
-        var item = document.createElement('li');
-        item.setAttribute('class', 'discord-user');
-        var img = document.createElement('img');
-        img.setAttribute('src', data.members[i].avatar_url);
-        img.setAttribute('class', 'discord-avatar');
-        var div = document.createElement('div');
-        if(data.members[i].status == 'online') {
-            div.setAttribute('class', 'discord-user-status discord-online');
-        } else {
-            div.setAttribute('class', 'discord-user-status discord-idle');
-        }
-        var text = document.createTextNode(data.members[i].username);
-        item.appendChild(img);
-        item.appendChild(div);
-        item.appendChild(text);
-
-        $('.discord-userlist').append(item);
-    }
 });
-
 
 
 function getParameterByName(name) {
